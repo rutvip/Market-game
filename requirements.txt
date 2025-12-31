@@ -1,0 +1,9 @@
+pandas
+numpy
+requests
+sqlalchemy
+tqdm
+scikit-learn
+xgboost
+transformers
+torch
