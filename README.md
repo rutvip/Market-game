@@ -9,6 +9,9 @@ This repository is a hands-on toy project that:
 
 The goal is that anyone new can clone this repo, run the pipeline end-to-end, and play the Python version locally.
 
+<img width="1373" height="787" alt="image" src="https://github.com/user-attachments/assets/9b0e343b-5af1-4991-84da-beade7c17a4f" />
+
+
 ---
 
 ## Requirements
