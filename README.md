@@ -39,23 +39,23 @@ This project uses the following Python packages (see `requirements.txt`):
 - models/ # trained models saved here
 - scripts/
     - init_db.py
-  seed_sym.py
-  backfill_news.py
-  backfill_candles.py
-  finbert_features.py
-  build_labels.py
-  train_regressor.py
-  test_one_news.py
-  add_predictions_label.py
-  score_news.py
-  simulate_ticks.py
-  simulate_multi.py
-  game_engine.py
-  mode_a_engine.py
-  run_game_symbol.py
-  run_mode_a_engine.py
-  run_round_mode_a.py
-  ui_py_game_mode.py
+    - seed_sym.py
+    - backfill_news.py
+    - backfill_candles.py
+    - finbert_features.py
+    - build_labels.py
+    - train_regressor.py
+    - test_one_news.py
+    - add_predictions_label.py
+    - score_news.py
+    - simulate_ticks.py
+    - simulate_multi.py
+    - game_engine.py
+    - mode_a_engine.py
+    - run_game_symbol.py
+    - run_mode_a_engine.py
+    - run_round_mode_a.py
+    - ui_py_game_mode.py
 - requirements.txt
 
 
