@@ -13,21 +13,6 @@ The goal is that anyone new can clone this repo, run the pipeline end-to-end, an
 
 ## Requirements
 
-This project uses the following Python packages:
-
-- pandas
-- numpy
-- requests
-- sqlalchemy
-- tqdm
-- scikit-learn
-- xgboost
-- transformers
-- torch
-- pygame
-
-Recommended Python version: 3.10 or 3.11.
-
 Recommended Python version: 3.10 or 3.11.
 
 This project uses the following Python packages (see `requirements.txt`):
@@ -50,10 +35,10 @@ This project uses the following Python packages (see `requirements.txt`):
 
 
 - data/
-  db/ # sqlite database lives here (you need to create this folder)
+    - db/ # sqlite database lives here (you need to create this folder)
 - models/ # trained models saved here
 - scripts/
-  init_db.py
+    - init_db.py
   seed_sym.py
   backfill_news.py
   backfill_candles.py
