@@ -67,7 +67,7 @@ requirements.txt
 
 git clone https://github.com/rutvip/Market-game.git
 
-2) Create required folders
+### 2) Create required folders
 
 You must create the database directory before initializing the DB.
 
@@ -82,7 +82,7 @@ Windows (PowerShell):
 mkdir data\db
 mkdir data\models
 
-3) Create and activate a virtual environment
+### 3) Create and activate a virtual environment
 
 Windows (PowerShell):
 
@@ -135,14 +135,14 @@ Fetches news articles and stores them in news_items.
 
 python scripts/backfill_news.py
 
-Step 4: Backfill candles
+### Step 4: Backfill candles
 
 Fetches price candles and stores them in price_candles.
 
 python scripts/backfill_candles.py
 
 
-Notes:
+## Notes:
 
 If you see 401 Unauthorized, your token is missing/incorrect.
 
@@ -229,7 +229,7 @@ No new news_items to featurize
 
 This means finbert_features.py already processed all currently ingested news. It is not an error.
 
-Notes
+## Notes
 
 This is a toy environment meant to be simple and runnable locally.
 
@@ -237,6 +237,6 @@ Labels and scoring are intentionally simplified to keep the pipeline easy to fol
 
 The price engine is not intended to be a real market simulator; it is designed to create a responsive trading loop driven by news.
 
-::contentReference[oaicite:0]{index=0}
+
 
 
