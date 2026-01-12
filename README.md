@@ -28,16 +28,31 @@ This project uses the following Python packages:
 
 Recommended Python version: 3.10 or 3.11.
 
+Recommended Python version: 3.10 or 3.11.
+
+This project uses the following Python packages (see `requirements.txt`):
+
+- pandas
+- numpy
+- requests
+- sqlalchemy
+- tqdm
+- scikit-learn
+- xgboost
+- transformers
+- torch
+- pygame
+
 ---
 
 
 ## Repository structure
 
 
-data/
+- data/
   db/ # sqlite database lives here (you need to create this folder)
-models/ # trained models saved here
-scripts/
+- models/ # trained models saved here
+- scripts/
   init_db.py
   seed_sym.py
   backfill_news.py
@@ -56,7 +71,7 @@ scripts/
   run_mode_a_engine.py
   run_round_mode_a.py
   ui_py_game_mode.py
-requirements.txt
+- requirements.txt
 
 
 ---
