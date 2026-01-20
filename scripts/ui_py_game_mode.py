@@ -7,22 +7,22 @@ from dataclasses import dataclass
 DB = "sqlite:///data/db/news.db"
 db = create_engine(DB)
 
-SYMBOL = "AMZN"
+SYMBOL = "AAPL"
 
 # GAME SETTINGS
 ROUND_SECONDS = 90
 DT = 0.05
 
-NEWS_INTERVAL_SEC = 15.0
-MIN_IMPACT = 0.15
+NEWS_INTERVAL_SEC = 5.0
+MIN_IMPACT = 0.3
 NEWS_POOL_SIZE = 300
 
 INV_PENALTY_LAMBDA = 0.02
 INV_PENALTY_POWER = 1.3
 
 # CANDLE SETTINGS (derived from eng.mid ticks)
-CANDLE_INTERVAL = 1.0   # seconds per candle (try 0.5 or 0.2 for faster candles)
-CANDLE_WINDOW = 60      # how many candles to display
+CANDLE_INTERVAL = 0.5  # seconds per candle (try 0.5 or 0.2 for faster candles)
+CANDLE_WINDOW = 500    # how many candles to display
 CANDLE_MAX_KEEP = 300   # internal buffer
 
 

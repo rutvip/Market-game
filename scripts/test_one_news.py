@@ -25,7 +25,7 @@ def predict_y(headline: str, hour=10, dow=1):
     return s, y_hat
 
 if __name__ == "__main__":
-    headline = "Apple beats earnings and raises guidance; shares jump"
+    headline = "Here's right now whats happening with tiktok deal"
     s, y_hat = predict_y(headline, hour=10, dow=1)
     print("headline:", headline)
     print("sentiment_score:", s)
