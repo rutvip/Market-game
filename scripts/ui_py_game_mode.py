@@ -3,11 +3,12 @@ import pygame
 from sqlalchemy import create_engine, text
 from mode_a_engine import ModeAEngine
 from dataclasses import dataclass
+from sqlalchemy import bindparam
 
 DB = "sqlite:///data/db/news.db"
 db = create_engine(DB)
 
-SYMBOL = "AAPL"
+SYMBOL = "AMZN"
 
 # GAME SETTINGS
 ROUND_SECONDS = 90
@@ -24,7 +25,7 @@ INV_PENALTY_POWER = 1.3
 CANDLE_INTERVAL = 0.5  # seconds per candle (try 0.5 or 0.2 for faster candles)
 CANDLE_WINDOW = 500    # how many candles to display
 CANDLE_MAX_KEEP = 300   # internal buffer
-
+ALLOWED_SOURCES = ("CNBC", "DowJones", "SeekingAlpha")  # start tight
 
 def inv_penalty(inv: int) -> float:
     return INV_PENALTY_LAMBDA * (abs(inv) ** INV_PENALTY_POWER)
@@ -38,16 +39,22 @@ def get_symbol_id(symbol: str) -> int:
     return int(row[0])
 
 
+
 def fetch_scored_pool(symbol_id: int, limit: int):
     with db.begin() as conn:
-        rows = conn.execute(text("""
+
+        q = text("""
             SELECT n.id, n.headline, p.direction, p.impact_score
             FROM news_items n
             JOIN news_predictions p ON p.news_id = n.id
             WHERE n.symbol_id = :sid
+            AND n.source IN :sources
             ORDER BY n.id DESC
             LIMIT :lim
-        """), {"sid": symbol_id, "lim": limit}).fetchall()
+        """).bindparams(bindparam("sources", expanding=True))
+
+        rows = conn.execute(q, {"sid": symbol_id, "sources": list(ALLOWED_SOURCES), "lim": limit}).fetchall()
+
 
     pool = [(int(r[0]), r[1], int(r[2]), float(r[3])) for r in rows][::-1]
     pool = [x for x in pool if x[2] != 0 and x[3] >= MIN_IMPACT]
